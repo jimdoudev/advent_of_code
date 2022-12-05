@@ -1,5 +1,4 @@
 from readlines import *
-##938
 
 lines = [x.split(",") for x in input_to_lines("day4.txt")]
 counter = 0
@@ -10,5 +9,4 @@ for line in lines:
     second_set = set(range(low_1, high_1 + 1))
     if(first_set & second_set):
         counter += 1
-
 print(counter)
