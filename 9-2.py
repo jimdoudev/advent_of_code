@@ -53,23 +53,35 @@ def move(input: List[str]) -> None:
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                                 elif(indexes[y - 1][1] > indexes[y][1]):
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
-                                    indexes[y][0] -= 1
+                                    if(indexes[y - 1][0] > indexes[y][0]):
+                                        indexes[y][0] += 1
+                                    elif(indexes[y - 1][0] < indexes[y][0]):
+                                        indexes[y][0] -= 1
                                     indexes[y][1] += 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                                 else:
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
-                                    indexes[y][0] -= 1
+                                    if(indexes[y - 1][0] > indexes[y][0]):
+                                        indexes[y][0] += 1
+                                    elif(indexes[y - 1][0] < indexes[y][0]):
+                                        indexes[y][0] -= 1
                                     indexes[y][1] -= 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                             elif(abs(indexes[y - 1][1] - indexes[y][1]) > 1):
                                 if(indexes[y - 1][1] > indexes[y][1]):
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
-                                    indexes[y][0] -= 1
+                                    if(indexes[y - 1][0] > indexes[y][0]):
+                                        indexes[y][0] += 1
+                                    elif(indexes[y - 1][0] < indexes[y][0]):
+                                        indexes[y][0] -= 1
                                     indexes[y][1] += 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                                 else:
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
-                                    indexes[y][0] -= 1
+                                    if(indexes[y - 1][0] > indexes[y][0]):
+                                        indexes[y][0] += 1
+                                    elif(indexes[y - 1][0] < indexes[y][0]):
+                                        indexes[y][0] -= 1
                                     indexes[y][1] -= 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                         if(y == 9):
@@ -89,23 +101,35 @@ def move(input: List[str]) -> None:
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                                 elif(indexes[y - 1][1] > indexes[y][1]):
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
-                                    indexes[y][0] += 1
+                                    if(indexes[y - 1][0] > indexes[y][0]):
+                                        indexes[y][0] += 1
+                                    elif(indexes[y - 1][0] < indexes[y][0]):
+                                        indexes[y][0] -= 1
                                     indexes[y][1] += 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                                 else:
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
-                                    indexes[y][0] += 1
+                                    if(indexes[y - 1][0] > indexes[y][0]):
+                                        indexes[y][0] += 1
+                                    elif(indexes[y - 1][0] < indexes[y][0]):
+                                        indexes[y][0] -= 1
                                     indexes[y][1] -= 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                             elif(abs(indexes[y - 1][1] - indexes[y][1]) > 1):
                                 if(indexes[y - 1][1] > indexes[y][1]):
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
-                                    indexes[y][0] += 1
+                                    if(indexes[y - 1][0] > indexes[y][0]):
+                                        indexes[y][0] += 1
+                                    elif(indexes[y - 1][0] < indexes[y][0]):
+                                        indexes[y][0] -= 1
                                     indexes[y][1] += 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                                 else:
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
-                                    indexes[y][0] += 1
+                                    if(indexes[y - 1][0] > indexes[y][0]):
+                                        indexes[y][0] += 1
+                                    elif(indexes[y - 1][0] < indexes[y][0]):
+                                        indexes[y][0] -= 1
                                     indexes[y][1] -= 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                         if(y == 9):
@@ -125,24 +149,36 @@ def move(input: List[str]) -> None:
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                                 elif(indexes[y - 1][0] > indexes[y][0]):
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
+                                    if(indexes[y - 1][1] > indexes[y][1]):
+                                        indexes[y][1] += 1
+                                    elif(indexes[y - 1][1] < indexes[y][1]):
+                                        indexes[y][1] -= 1
                                     indexes[y][0] += 1
-                                    indexes[y][1] -= 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                                 else:
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
                                     indexes[y][0] -= 1
-                                    indexes[y][1] -= 1
+                                    if(indexes[y - 1][1] > indexes[y][1]):
+                                        indexes[y][1] += 1
+                                    elif(indexes[y - 1][1] < indexes[y][1]):
+                                        indexes[y][1] -= 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                             elif(abs(indexes[y - 1][0] - indexes[y][0]) > 1):
                                 if(indexes[y - 1][0] > indexes[y][0]):
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
                                     indexes[y][0] += 1
-                                    indexes[y][1] -= 1
+                                    if(indexes[y - 1][1] > indexes[y][1]):
+                                        indexes[y][1] += 1
+                                    elif(indexes[y - 1][1] < indexes[y][1]):
+                                        indexes[y][1] -= 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                                 else:
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
                                     indexes[y][0] -= 1
-                                    indexes[y][1] -= 1
+                                    if(indexes[y - 1][1] > indexes[y][1]):
+                                        indexes[y][1] += 1
+                                    elif(indexes[y - 1][1] < indexes[y][1]):
+                                        indexes[y][1] -= 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                         if(y == 9):
                             t_positions.add(tuple(indexes[9]))
@@ -162,23 +198,35 @@ def move(input: List[str]) -> None:
                                 elif(indexes[y - 1][0] > indexes[y][0]):
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
                                     indexes[y][0] += 1
-                                    indexes[y][1] += 1
+                                    if(indexes[y - 1][1] > indexes[y][1]):
+                                        indexes[y][1] += 1
+                                    elif(indexes[y - 1][1] < indexes[y][1]):
+                                        indexes[y][1] -= 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                                 else:
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
                                     indexes[y][0] -= 1
-                                    indexes[y][1] += 1
+                                    if(indexes[y - 1][1] > indexes[y][1]):
+                                        indexes[y][1] += 1
+                                    elif(indexes[y - 1][1] < indexes[y][1]):
+                                        indexes[y][1] -= 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                             elif(abs(indexes[y - 1][0] - indexes[y][0]) > 1):
                                 if(indexes[y - 1][0] > indexes[y][0]):
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
                                     indexes[y][0] += 1
-                                    indexes[y][1] += 1
+                                    if(indexes[y - 1][1] > indexes[y][1]):
+                                        indexes[y][1] += 1
+                                    elif(indexes[y - 1][1] < indexes[y][1]):
+                                        indexes[y][1] -= 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                                 else:
                                     grid[indexes[y][0]][indexes[y][1]].remove(y)
                                     indexes[y][0] -= 1
-                                    indexes[y][1] += 1
+                                    if(indexes[y - 1][1] > indexes[y][1]):
+                                        indexes[y][1] += 1
+                                    elif(indexes[y - 1][1] < indexes[y][1]):
+                                        indexes[y][1] -= 1
                                     grid[indexes[y][0]][indexes[y][1]].append(y)
                         if(y == 9):
                             t_positions.add(tuple(indexes[9]))
